@@ -1,6 +1,7 @@
 # Here’s a Python solution to find the maximum and minimum elements in an array:
 
 def find_max_and_min(arr):
+    
     if not arr:  # Check if the array is empty
         return None, None  # Return None for both max and min
 

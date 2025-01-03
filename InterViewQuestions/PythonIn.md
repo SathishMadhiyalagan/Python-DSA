@@ -499,3 +499,209 @@ class Dog(Animal):
 animal = Dog()
 animal.speak()  # Output: Dog barks
 ```
+
+
+---
+---
+
+
+### **Advanced Python Questions and Answers**
+
+---
+
+**1. Explain Python's metaclasses.**  
+Metaclasses define the behavior of classes and are used to control class creation. In Python, `type` is the default metaclass. Custom metaclasses are created by subclassing `type`.  
+
+Example:  
+```python
+class Meta(type):
+    def __new__(cls, name, bases, dct):
+        dct['greet'] = lambda self: f"Hello from {name}!"
+        return super().__new__(cls, name, bases, dct)
+
+class MyClass(metaclass=Meta):
+    pass
+
+obj = MyClass()
+print(obj.greet())  # Output: Hello from MyClass!
+```
+
+---
+
+**2. How do you implement abstract classes in Python?**  
+Abstract classes are created using the `abc` module. They serve as blueprints for subclasses and cannot be instantiated directly.  
+
+Example:  
+```python
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def sound(self):
+        pass
+
+class Dog(Animal):
+    def sound(self):
+        return "Bark!"
+
+dog = Dog()
+print(dog.sound())  # Output: Bark!
+```
+
+---
+
+**3. What are Python's descriptors?**  
+Descriptors are objects that manage attribute access in other objects. They define methods like `__get__`, `__set__`, and `__delete__`.
+
+Example:  
+```python
+class Descriptor:
+    def __init__(self, name):
+        self.name = name
+
+    def __get__(self, instance, owner):
+        return instance.__dict__.get(self.name)
+
+    def __set__(self, instance, value):
+        instance.__dict__[self.name] = value
+
+class MyClass:
+    attr = Descriptor("attr")
+
+obj = MyClass()
+obj.attr = 42
+print(obj.attr)  # Output: 42
+```
+
+---
+
+**4. What are coroutines in Python?**  
+Coroutines are a special type of generator used for asynchronous programming. They can `await` results instead of blocking execution.  
+
+Example:  
+```python
+import asyncio
+
+async def greet():
+    await asyncio.sleep(1)
+    return "Hello!"
+
+async def main():
+    result = await greet()
+    print(result)
+
+asyncio.run(main())  # Output: Hello!
+```
+
+---
+
+**5. Explain Python's context managers.**  
+Context managers handle resource management (e.g., file handling). They use the `with` statement and define `__enter__` and `__exit__` methods.  
+
+Example:  
+```python
+class MyContext:
+    def __enter__(self):
+        print("Entering context")
+        return self
+
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print("Exiting context")
+
+with MyContext():
+    print("Inside context")
+# Output:
+# Entering context
+# Inside context
+# Exiting context
+```
+
+---
+
+**6. How does Python's garbage collector work?**  
+Python uses reference counting and a cyclic garbage collector to manage memory.  
+- **Reference Counting**: An object is destroyed when its reference count drops to zero.  
+- **Cyclic Garbage Collector**: Handles reference cycles where objects reference each other.
+
+---
+
+**7. What is the `yield` keyword used for?**  
+The `yield` keyword is used to create generators. It pauses the function and returns a value but retains its state for subsequent calls.
+
+Example:  
+```python
+def my_gen():
+    yield 1
+    yield 2
+    yield 3
+
+for val in my_gen():
+    print(val)
+# Output:
+# 1
+# 2
+# 3
+```
+
+---
+
+**8. Explain Python's `asyncio` module.**  
+The `asyncio` module is used for writing concurrent code using async/await syntax. It handles asynchronous tasks and I/O-bound operations.
+
+Example:  
+```python
+import asyncio
+
+async def task(name):
+    print(f"Task {name} starts")
+    await asyncio.sleep(1)
+    print(f"Task {name} ends")
+
+async def main():
+    await asyncio.gather(task("A"), task("B"))
+
+asyncio.run(main())
+# Output:
+# Task A starts
+# Task B starts
+# Task A ends
+# Task B ends
+```
+
+---
+
+**9. What are Python slots, and how do you use them?**  
+`__slots__` limit the attributes of a class to a predefined set, saving memory by preventing the creation of a `__dict__`.  
+
+Example:  
+```python
+class MyClass:
+    __slots__ = ['x', 'y']
+
+obj = MyClass()
+obj.x = 10
+obj.y = 20
+# obj.z = 30  # AttributeError: 'MyClass' object has no attribute 'z'
+```
+
+---
+
+**10. What is monkey patching in Python?**  
+Monkey patching dynamically modifies or extends a class or module at runtime.  
+
+Example:  
+```python
+class MyClass:
+    def greet(self):
+        return "Hello!"
+
+def new_greet(self):
+    return "Hi!"
+
+MyClass.greet = new_greet  # Monkey patching
+obj = MyClass()
+print(obj.greet())  # Output: Hi!
+```
+
+---
+---

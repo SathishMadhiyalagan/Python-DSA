@@ -51,6 +51,7 @@ Python supports various built-in data types, including:
 
 ### Functions in Python  
 Functions in Python are defined using the `def` keyword:  
+A block of code that performs a specific task and can be reused
 ```python  
 def function_name(parameters):  
     """Optional docstring"""  

@@ -1,4 +1,3 @@
-Providing answers for all 30 questions is detailed work. I'll structure the responses below, categorized under **General Data Science**, 
 
 ### **General Data Science Questions**
 

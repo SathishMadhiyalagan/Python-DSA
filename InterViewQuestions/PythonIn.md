@@ -299,3 +299,203 @@ python -m venv env
 deactivate
 ```
 
+
+---
+---
+
+### **OOP Concepts in Python - Questions and Answers**
+
+---
+
+**1. What is object-oriented programming (OOP)?**  
+OOP is a programming paradigm that uses **objects** to model real-world entities. These objects encapsulate data (attributes) and behavior (methods), making code modular, reusable, and easier to maintain. Core principles include:  
+- **Encapsulation**  
+- **Inheritance**  
+- **Polymorphism**  
+- **Abstraction**
+
+1. Encapsulation: Bundling data and methods within a single unit (class) and restricting direct access to some components.
+2. Inheritance: Mechanism to create new classes based on existing classes.
+3. Polymorphism: Ability to use a single interface for different data types or classes.
+4. Abstraction: Hiding complex implementation details and showing only the necessary features of an object.
+
+---
+
+**2. Define class and object in Python.**  
+- **Class**: A blueprint for creating objects, defining attributes and methods.  
+- **Object**: An instance of a class, representing a specific entity.
+
+Example:  
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+dog = Animal("Dog")  # Object creation
+print(dog.name)  # Output: Dog
+```
+
+---
+
+**3. Explain encapsulation with an example.**  
+Encapsulation restricts access to certain attributes or methods using private or protected access specifiers.  
+
+Example:  
+```python
+class Employee:
+    def __init__(self, name, salary):
+        self.name = name
+        self.__salary = salary  # Private attribute
+
+    def get_salary(self):
+        return self.__salary
+
+emp = Employee("John", 50000)
+print(emp.get_salary())  # Output: 50000
+# print(emp.__salary)  # Error: AttributeError
+```
+
+---
+
+**4. What is abstraction in Python?**  
+Abstraction hides complex details and exposes only essential features. In Python, it is achieved using abstract base classes (`ABC`) from the `abc` module.  
+
+Example:  
+```python
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return 3.14 * self.radius ** 2
+
+circle = Circle(5)
+print(circle.area())  # Output: 78.5
+```
+
+---
+
+**5. What is polymorphism in Python?**  
+Polymorphism allows objects of different classes to be treated as objects of a common super class. It can be achieved via method overriding or operator overloading.  
+
+Example:  
+```python
+class Bird:
+    def fly(self):
+        print("Bird can fly")
+
+class Penguin(Bird):
+    def fly(self):
+        print("Penguin can't fly")
+
+def flying_test(bird):
+    bird.fly()
+
+flying_test(Bird())     # Output: Bird can fly
+flying_test(Penguin())  # Output: Penguin can't fly
+```
+
+---
+
+**6. What is the `self` parameter in Python?**  
+`self` refers to the instance of the class. It is used to access attributes and methods of the class within the class itself.  
+
+Example:  
+```python
+class Person:
+    def __init__(self, name):
+        self.name = name
+
+    def greet(self):
+        print(f"Hello, my name is {self.name}")
+
+p = Person("Alice")
+p.greet()  # Output: Hello, my name is Alice
+```
+
+---
+
+**7. Explain multiple inheritance with a conflict resolution example.**  
+Python uses the **Method Resolution Order (MRO)** to resolve conflicts in multiple inheritance.  
+
+Example:  
+```python
+class A:
+    def greet(self):
+        print("Hello from A!")
+
+class B:
+    def greet(self):
+        print("Hello from B!")
+
+class C(A, B):
+    pass
+
+obj = C()
+obj.greet()  # Output: Hello from A! (follows MRO)
+```
+
+---
+
+**8. How is operator overloading achieved in Python?**  
+Operator overloading is achieved by defining special methods (e.g., `__add__`, `__sub__`) for operators.  
+
+Example:  
+```python
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+v1 = Vector(2, 3)
+v2 = Vector(4, 5)
+result = v1 + v2  # Calls __add__
+print(result.x, result.y)  # Output: 6 8
+```
+
+---
+
+**9. What is the difference between protected and private attributes?**  
+- **Protected Attributes**: Prefix with a single underscore (`_`). Accessible within the class and subclasses.  
+- **Private Attributes**: Prefix with double underscores (`__`). Accessible only within the class.  
+
+Example:  
+```python
+class MyClass:
+    def __init__(self):
+        self._protected = "Protected"
+        self.__private = "Private"
+
+obj = MyClass()
+print(obj._protected)  # Output: Protected
+# print(obj.__private)  # Error: AttributeError
+```
+
+---
+
+**10. How does Python achieve dynamic binding?**  
+Python achieves dynamic binding by resolving method calls at runtime. This supports polymorphism, allowing a derived class's method to override the base class's method.  
+
+Example:  
+```python
+class Animal:
+    def speak(self):
+        print("Animal speaks")
+
+class Dog(Animal):
+    def speak(self):
+        print("Dog barks")
+
+animal = Dog()
+animal.speak()  # Output: Dog barks
+```

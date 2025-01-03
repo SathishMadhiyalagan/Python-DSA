@@ -705,3 +705,233 @@ print(obj.greet())  # Output: Hi!
 
 ---
 ---
+
+
+## File Handling
+
+### 1. How do you read and write files in Python?
+Use the built-in `open()` function to read and write files. You can use modes like `'r'` (read), `'w'` (write), `'a'` (append), and `'rb'` (read binary).
+
+```python
+# Writing to a file
+with open('file.txt', 'w') as file:
+    file.write("Hello, World!")
+
+# Reading from a file
+with open('file.txt', 'r') as file:
+    content = file.read()
+    print(content)
+```
+
+### 2. What is the difference between `rb` and `r` modes in file handling?
+- `'r'` mode opens the file in text mode, meaning data is read as a string.
+- `'rb'` mode opens the file in binary mode, where data is read as bytes.
+
+### 3. How do you handle binary files in Python?
+To read and write binary files, use `'rb'` and `'wb'` modes with `open()`. Binary data is handled as `bytes` objects.
+
+Example:
+```python
+with open('image.jpg', 'rb') as file:
+    data = file.read()
+```
+
+### 4. What is the use of the `seek()` method?
+The `seek()` method moves the file pointer to a specified position. It allows random access to a file, meaning you can read/write from any part of the file.
+
+Example:
+```python
+with open('file.txt', 'r') as file:
+    file.seek(10)  # Moves pointer to 10th byte
+    print(file.read())  # Reads content from the 10th byte onward
+```
+
+### 5. How can you handle file exceptions in Python?
+File-related exceptions can be handled using `try-except` blocks, such as `FileNotFoundError`, `PermissionError`, etc.
+
+Example:
+```python
+try:
+    with open('file.txt', 'r') as file:
+        content = file.read()
+except FileNotFoundError:
+    print("File not found.")
+```
+
+### 6. Explain the difference between `open()` and `with open()`.
+- `open()` simply opens a file and returns a file object, but you must manually close it using `close()`.
+- `with open()` is used for better resource management. It automatically closes the file after the block of code is executed.
+
+---
+
+## Data Structures
+
+### 1. What are Python's built-in data structures?
+Python includes the following built-in data structures:
+- **List**: Ordered, mutable, allows duplicate elements.
+- **Tuple**: Ordered, immutable, allows duplicate elements.
+- **Set**: Unordered, mutable, does not allow duplicate elements.
+- **Dictionary**: Unordered, mutable, key-value pairs.
+
+### 2. How do you implement a stack in Python?
+A stack can be implemented using a list with `append()` (push) and `pop()` methods.
+
+Example:
+```python
+stack = []
+stack.append(1)  # Push
+stack.append(2)
+print(stack.pop())  # Pop
+```
+
+### 3. Explain the difference between a set and a frozenset.
+- **Set**: Mutable; elements can be added or removed.
+- **Frozenset**: Immutable; cannot be modified once created.
+
+### 4. How do you implement a queue in Python?
+A queue can be implemented using the `collections.deque` class, which provides an efficient way to append and pop elements from both ends.
+
+Example:
+```python
+from collections import deque
+
+queue = deque()
+queue.append(1)  # Enqueue
+queue.append(2)
+print(queue.popleft())  # Dequeue
+```
+
+### 5. How do you sort a dictionary by keys or values?
+- To sort by keys: `sorted(dictionary)`
+- To sort by values: `sorted(dictionary.items(), key=lambda x: x[1])`
+
+Example:
+```python
+d = {'b': 2, 'a': 1, 'c': 3}
+print(sorted(d))  # Sort by keys
+print(sorted(d.items(), key=lambda x: x[1]))  # Sort by values
+```
+
+### 6. What are Python's `defaultdict` and `Counter`?
+- **`defaultdict`**: A subclass of `dict` that provides a default value for missing keys.
+```python
+from collections import defaultdict
+
+d = defaultdict(int)
+d['a'] += 1
+print(d['a'])  # Output: 1
+```
+- **`Counter`**: A subclass of `dict` designed to count hashable objects.
+```python
+from collections import Counter
+
+c = Counter('abracadabra')
+print(c)  # Output: Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+```
+
+---
+
+## Libraries and Frameworks
+
+### 1. What is the purpose of the NumPy library?
+NumPy is a library for numerical computing. It provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
+
+Example:
+```python
+import numpy as np
+arr = np.array([1, 2, 3, 4])
+print(arr + 1)  # Output: [2 3 4 5]
+```
+
+### 2. Explain pandas DataFrames.
+A `DataFrame` in pandas is a 2-dimensional labeled data structure with columns of potentially different types. It is similar to a table or a spreadsheet.
+
+Example:
+```python
+import pandas as pd
+data = {'Name': ['Alice', 'Bob'], 'Age': [25, 30]}
+df = pd.DataFrame(data)
+print(df)
+```
+
+### 3. What is the use of the Matplotlib library?
+Matplotlib is a plotting library used for creating static, animated, and interactive visualizations in Python. It is widely used for data visualization.
+
+Example:
+```python
+import matplotlib.pyplot as plt
+x = [1, 2, 3, 4]
+y = [10, 20, 25, 30]
+plt.plot(x, y)
+plt.show()
+```
+
+### 4. How does Django differ from Flask?
+- **Django**: A full-stack, high-level framework that comes with built-in features such as authentication, database ORM, and an admin panel.
+- **Flask**: A lightweight micro-framework with minimal features, allowing you to choose additional components for your project.
+
+### 5. What is Pytest, and how do you use it?
+Pytest is a testing framework for Python. It simplifies the process of writing simple and scalable test cases.
+Example:
+```python
+def test_addition():
+    assert 1 + 1 == 2
+```
+Run tests with:
+```bash
+pytest
+```
+
+### 6. What are Python's asyncio and threading libraries used for?
+- **`asyncio`**: A library for writing asynchronous programs using `async` and `await` syntax. It is used for I/O-bound tasks.
+- **`threading`**: A library for creating concurrent threads of execution. It is suitable for CPU-bound tasks that can run in parallel.
+
+---
+
+## Python and Databases
+
+### 1. How do you connect to a database using Python?
+You can use libraries such as `sqlite3`, `MySQLdb`, or `psycopg2` to connect to databases.
+
+Example for SQLite:
+```python
+import sqlite3
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+cursor.execute("SELECT * FROM users")
+conn.close()
+```
+
+### 2. What is the difference between MySQL and SQLite?
+- **MySQL**: A full-fledged database management system that requires a server and is suited for large-scale applications.
+- **SQLite**: A lightweight, file-based database used for smaller, less complex applications.
+
+### 3. How do you execute a SQL query in Python?
+You can use libraries like `sqlite3` or `mysql.connector` to execute SQL queries.
+
+Example for SQLite:
+```python
+cursor.execute("SELECT * FROM users")
+```
+
+### 4. What is an ORM in Python?
+ORM (Object-Relational Mapping) is a technique for converting between incompatible types (objects and database rows). Libraries like Django ORM and SQLAlchemy provide this abstraction layer.
+
+### 5. How does Django's ORM work?
+Django's ORM allows you to interact with the database using Python objects. You define models as classes, and Django automatically handles the SQL queries.
+
+Example:
+```python
+from django.db import models
+
+class User(models.Model):
+    username = models.CharField(max_length=100)
+    email = models.EmailField()
+```
+You can query the database using:
+```python
+User.objects.all()
+```
+
+---
+

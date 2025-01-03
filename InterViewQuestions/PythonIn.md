@@ -15,6 +15,8 @@ Welcome to the **Basic Python Questions** repository! This repository contains a
 10. [Shallow vs Deep Copy](#shallow-vs-deep-copy)  
 11. [Exception Handling](#exception-handling)  
 
+---
+
 ### Introduction  
 This repository is designed for Python learners and developers preparing for interviews or brushing up on Python fundamentals. Each section includes theoretical explanations and code examples for better understanding.  
 
@@ -116,12 +118,11 @@ finally:
     print("Execution complete.")  
 ```  
 
-
-
----
 ---
 
-### **Intermediate Python Questions and Answers**
+---
+
+### **Intermediate Python Questions and Answers**  
 
 ---
 
@@ -300,6 +301,7 @@ deactivate
 ```
 
 
+
 ---
 ---
 
@@ -383,7 +385,7 @@ print(circle.area())  # Output: 78.5
 ---
 
 **5. What is polymorphism in Python?**  
-Polymorphism allows objects of different classes to be treated as objects of a common super class. It can be achieved via method overriding or operator overloading.  
+Polymorphism allows objects of different classes to be treated as objects of a common superclass. It can be achieved via method overriding or operator overloading.  
 
 Example:  
 ```python
@@ -500,10 +502,9 @@ animal = Dog()
 animal.speak()  # Output: Dog barks
 ```
 
-
----
 ---
 
+---
 
 ### **Advanced Python Questions and Answers**
 
@@ -705,7 +706,6 @@ print(obj.greet())  # Output: Hi!
 
 ---
 ---
-
 
 ## File Handling
 

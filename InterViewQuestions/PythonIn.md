@@ -116,7 +116,10 @@ finally:
     print("Execution complete.")  
 ```  
 
-______________________________________________________________
+
+
+---
+---
 
 ### **Intermediate Python Questions and Answers**
 

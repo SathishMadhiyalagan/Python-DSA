@@ -16,3 +16,11 @@ reverse_array_recursive(array, 0, len(array) - 1)
 print("Reversed Array:", array)
 
 
+
+list1 = [1,2,3,4,5,9,6,7,8]
+print(list1)
+for i in range(len(list1)):
+    if i < len(list1)//2:
+        list1[i],list1[-(i+1)] = list1[-(i+1)],list1[i]
+print(list1)
+        

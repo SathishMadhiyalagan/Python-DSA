@@ -55,6 +55,6 @@ def roman_to_integer(s):
 
 # Example usage
 print(roman_to_integer("III"))    # Output: 3
-print(roman_to_integer("IV"))     # Output: 9
+print(roman_to_integer("IV"))     # Output: 4
 print(roman_to_integer("LVIII"))  # Output: 58
 print(roman_to_integer("MCMXCIV")) # Output: 1994

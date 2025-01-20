@@ -5,6 +5,6 @@ def find_duplicates(nums):
             duplicates.add(num)
         else:
             seen.add(num)
-    return list(duplicates)
+    return list(duplicates),list(seen)
 
 print(find_duplicates([4,3,2,7,8,2,3,1,4]))

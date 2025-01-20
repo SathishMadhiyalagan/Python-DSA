@@ -21,6 +21,6 @@ def sort_012(arr):
     return arr
 
 # Example usage
-array = [0,1, 2, 1, 0, 2, 1,2,1,2,1, 0]
+array = [1,0,1, 2, 1, 0, 2, 1,2,1,2,1, 0]
 sorted_array = sort_012(array)
 print("Sorted Array:", sorted_array)

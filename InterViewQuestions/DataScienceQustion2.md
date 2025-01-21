@@ -117,7 +117,8 @@
 5. How do convolutional filters work in image processing?
 6. What are some challenges in processing high-resolution images?
 
-
+---
+---
 
 ### **What is a Decision Tree? How does it work?**
 A **Decision Tree** is a supervised learning algorithm used for both classification and regression tasks. It models decisions based on input features by splitting data into branches based on conditions, ultimately leading to decision points (leaves). 

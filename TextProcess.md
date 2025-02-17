@@ -70,3 +70,40 @@ This project is a **Text Processing Web Application** built using **Flask** for 
    - Explain how **BART** is used for summarization, how **spaCy** extracts keywords, and how **TextBlob** determines sentiment.
 
 ---
+
+
+### **Summarization Models:**  
+1. BART (Facebook/bart-large-cnn)  
+2. T5 (Google/t5-small, t5-base, t5-large)  
+3. Pegasus (Google/pegasus-large)  
+4. GPT-3.5/GPT-4 (OpenAI)  
+5. XLNet (for extractive summarization)  
+6. LongT5 (Google)  
+7. LED (Longformer Encoder-Decoder)  
+8. ProphetNet (Microsoft)  
+9. mT5 (Multilingual T5)  
+10. DistilBART (Distilled version of BART)  
+
+### **Keyword Extraction Models:**  
+1. spaCy (Named Entity Recognition)  
+2. YAKE (Yet Another Keyword Extractor)  
+3. TF-IDF (Term Frequency-Inverse Document Frequency)  
+4. KeyBERT (BERT-based keyword extraction)  
+5. RAKE (Rapid Automatic Keyword Extraction)  
+6. BERT-EmbedRank  
+7. TextRank (Graph-based ranking algorithm)  
+8. Gensim (Topic modeling with LDA)  
+9. KEA (Keyphrase Extraction Algorithm)  
+10. KPEX (Keyword and Keyphrase Extraction using LSTM)  
+
+### **Sentiment Analysis Models:**  
+1. VADER (Valence Aware Dictionary and sEntiment Reasoner)  
+2. TextBlob (Lexicon-based)  
+3. BERT (BERT-based sentiment classifiers)  
+4. RoBERTa (Robustly optimized BERT approach)  
+5. DistilBERT (Lighter version of BERT)  
+6. ALBERT (A Lite BERT)  
+7. XLNet (For sentiment classification tasks)  
+8. GPT-3.5/GPT-4 (OpenAI)  
+9. Flair NLP (Pre-trained sentiment models)  
+10. SentiWordNet (Lexical-based sentiment analysis)  

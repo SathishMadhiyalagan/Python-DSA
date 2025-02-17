@@ -107,3 +107,92 @@ This project is a **Text Processing Web Application** built using **Flask** for 
 8. GPT-3.5/GPT-4 (OpenAI)  
 9. Flair NLP (Pre-trained sentiment models)  
 10. SentiWordNet (Lexical-based sentiment analysis)  
+
+
+Here are the links to the models and tools you've listed:
+
+**Summarization Models:**
+
+1. **BART (Facebook/bart-large-cnn):** A denoising autoencoder for pretraining sequence-to-sequence models.
+   - [Hugging Face Model Card](https://huggingface.co/facebook/bart-large-cnn)
+
+2. **T5 (Google/t5-small, t5-base, t5-large):** A text-to-text transformer model that converts all NLP tasks into a text-to-text format.
+   - [Hugging Face Model Documentation](https://huggingface.co/docs/transformers/en/model_doc/t5)
+
+3. **Pegasus (Google/pegasus-large):** A model designed for abstractive text summarization.
+   - [Hugging Face Model Card](https://huggingface.co/google/pegasus-large)
+
+4. **GPT-3.5/GPT-4 (OpenAI):** Advanced language models capable of understanding and generating human-like text.
+   - [OpenAI GPT-4](https://openai.com/gpt-4)
+
+5. **XLNet:** An autoregressive pretraining method that outperforms BERT on various tasks.
+   - [Hugging Face Model Card](https://huggingface.co/xlnet-base-cased)
+
+6. **LongT5 (Google):** An extension of T5 designed to handle long sequences efficiently.
+   - [Hugging Face Model Card](https://huggingface.co/google/long-t5-tglobal-large)
+
+7. **LED (Longformer Encoder-Decoder):** A model for long-document summarization.
+   - [Hugging Face Model Card](https://huggingface.co/allenai/led-base-16384)
+
+8. **ProphetNet (Microsoft):** A model optimized for sequence-to-sequence generation tasks.
+   - [Hugging Face Model Card](https://huggingface.co/microsoft/prophetnet-large-uncased)
+
+9. **mT5 (Multilingual T5):** A multilingual variant of T5 covering multiple languages.
+   - [Hugging Face Model Card](https://huggingface.co/google/mt5-large)
+
+10. **DistilBART:** A distilled version of BART, offering a lighter and faster model.
+    - [Hugging Face Model Card](https://huggingface.co/sshleifer/distilbart-cnn-12-6)
+
+**Keyword Extraction Models:**
+
+1. **spaCy (Named Entity Recognition):** An open-source library for advanced NLP tasks, including NER.
+   - [spaCy Official Website](https://spacy.io/)
+
+2. **YAKE (Yet Another Keyword Extractor):** A lightweight unsupervised automatic keyword extraction method.
+   - [YAKE GitHub Repository](https://github.com/LIAAD/yake)
+
+3. **TF-IDF (Term Frequency-Inverse Document Frequency):** A statistical measure used to evaluate the importance of a word in a document.
+   - [TF-IDF Explanation](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+
+4. **KeyBERT:** A minimal and easy-to-use keyword extraction technique that leverages BERT embeddings.
+   - [KeyBERT GitHub Repository](https://github.com/MaartenGr/KeyBERT)
+
+5. **RAKE (Rapid Automatic Keyword Extraction):** An unsupervised, domain-independent keyword extraction algorithm.
+   - [RAKE GitHub Repository](https://github.com/zelandiya/RAKE-tutorial)
+
+6. **BERT-EmbedRank:** A keyword extraction method using BERT embeddings and cosine similarity.
+   - [EmbedRank Paper](https://arxiv.org/abs/1801.04470)
+
+7. **TextRank:** A graph-based ranking algorithm for keyword extraction.
+   - [PyTextRank GitHub Repository](https://github.com/DerwenAI/pytextrank)
+
+8. **Gensim (Topic modeling with LDA):** A Python library for topic modeling, document indexing, and similarity retrieval.
+   - [Gensim Official Website](https://radimrehurek.com/gensim/)
+
+9. **KEA (Keyphrase Extraction Algorithm):** An algorithm for extracting keyphrases from text documents.
+   - [KEA GitHub Repository](https://github.com/zelandiya/KEA)
+
+10. **KPEX (Keyword and Keyphrase Extraction using LSTM):** A deep learning approach to keyword extraction.
+    - [KPEX Paper](https://arxiv.org/abs/1806.09568)
+
+**Sentiment Analysis Models:**
+
+1. **VADER (Valence Aware Dictionary and sEntiment Reasoner):** A lexicon and rule-based sentiment analysis tool.
+   - [VADER GitHub Repository](https://github.com/cjhutto/vaderSentiment)
+
+2. **TextBlob:** A Python library for processing textual data, providing a simple API for diving into common NLP tasks.
+   - [TextBlob Official Website](https://textblob.readthedocs.io/en/dev/)
+
+3. **BERT (BERT-based sentiment classifiers):** A transformer-based model pre-trained on a large corpus of text.
+   - [Hugging Face Model Card](https://huggingface.co/bert-base-uncased)
+
+4. **RoBERTa (Robustly optimized BERT approach):** An optimized method for pretraining BERT models.
+   - [Hugging Face Model Card](https://huggingface.co/roberta-base)
+
+5. **DistilBERT (Lighter version of BERT):** A smaller, faster, cheaper, and lighter version of BERT.
+   - [Hugging Face Model Documentation](https://huggingface.co/docs/transformers/en/model_doc/distilbert)
+
+6. **ALBERT (A Lite BERT):** A lighter version of BERT with fewer parameters.
+   - [Hugging Face Model Card](https://huggingface.co/albert-base-v2)
+
+7. **XLNet (For sentiment classification tasks):** 

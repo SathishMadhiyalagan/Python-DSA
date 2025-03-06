@@ -1,5 +1,5 @@
 
-```md
+
 # React.js Interview Questions & Answers  
 
 This document provides answers to some of the most frequently asked React.js interview questions.  

@@ -1,0 +1,86 @@
+Here are five different test queries with unique content for your API:
+
+### **1. Product Review Analysis**
+```json
+{
+  "text": "The new smartphone has an amazing camera, a sleek design, and a long battery life. However, the price is quite high, making it less affordable for many users."
+}
+```
+**Expected Output:**
+- **Summary:** The smartphone has a great camera, sleek design, and long battery life but is expensive.
+- **Keywords:** smartphone, camera, design, battery, price
+- **Sentiment:** Neutral (since both positive and negative points are mentioned)
+
+---
+
+### **2. Historical Event Summary**
+```json
+{
+  "text": "The Wright brothers, Orville and Wilbur, made the first successful flight of a powered aircraft in 1903. This historic event took place at Kitty Hawk, North Carolina, and revolutionized aviation forever."
+}
+```
+**Expected Output:**
+- **Summary:** The Wright brothers achieved the first powered flight in 1903 at Kitty Hawk.
+- **Keywords:** Wright brothers, flight, aircraft, Kitty Hawk, aviation
+- **Sentiment:** Positive (describes an achievement)
+
+---
+
+### **3. Movie Review Sentiment**
+```json
+{
+  "text": "The movie had stunning visuals and an engaging storyline, but the pacing was slow, and the character development felt lacking."
+}
+```
+**Expected Output:**
+- **Summary:** The movie had great visuals and a good story but suffered from slow pacing and weak character development.
+- **Keywords:** movie, visuals, storyline, pacing, character development
+- **Sentiment:** Neutral (positive and negative aspects are balanced)
+
+---
+
+### **4. Scientific Discovery Explanation**
+```json
+{
+  "text": "Photosynthesis is the process by which green plants use sunlight to synthesize nutrients from carbon dioxide and water. It plays a crucial role in producing oxygen and sustaining life on Earth."
+}
+```
+**Expected Output:**
+- **Summary:** Photosynthesis helps plants create nutrients using sunlight and produces oxygen for life on Earth.
+- **Keywords:** photosynthesis, plants, sunlight, oxygen, nutrients
+- **Sentiment:** Positive (describes a beneficial process)
+
+---
+
+### **5. Business News Report**
+```json
+{
+  "text": "The stock market witnessed a major surge today, with technology stocks leading the rally. Investors are optimistic about economic recovery, and analysts predict continued growth in the coming months."
+}
+```
+**Expected Output:**
+- **Summary:** The stock market surged with tech stocks leading, driven by investor optimism about economic recovery.
+- **Keywords:** stock market, surge, technology, investors, recovery
+- **Sentiment:** Positive (indicates economic growth and optimism)
+
+---
+
+### **How to Test?**
+1. Start your Flask server:
+   ```bash
+   python app.py
+   ```
+2. Send a **POST** request to `/process` with one of the JSON payloads above using:
+   - **Postman**
+   - **cURL**
+   - **Python requests module**:
+     ```python
+     import requests
+
+     url = "http://127.0.0.1:5000/process"
+     payload = {"text": "Your test text here"}
+     response = requests.post(url, json=payload)
+     print(response.json())
+     ```
+
+Let me know if you need more test cases! 🚀

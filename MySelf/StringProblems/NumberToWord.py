@@ -57,6 +57,32 @@ def convertToWords(n):
     # Remove trailing space
     return res.strip()
 
-if __name__ == "__main__":
-    n = 214711
-    print(convertToWords(n))
+
+n = 214711
+print(convertToWords(n))
+
+
+def convertToWords(n):
+    if n == 0:
+        return "Zero"
+
+    units = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", 
+             "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"]
+    
+    tens = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"]
+
+    def helper(num):
+        if num == 0:
+            return ""
+        elif num < 20:
+            return units[num] + " "
+        elif num < 100:
+            return tens[num // 10] + " " + helper(num % 10)
+        else:
+            return units[num // 100] + " Hundred " + helper(num % 100)
+
+    return helper(n).strip()
+
+# Example usage
+n = 1000
+print(convertToWords(n))  # Output: "One Thousand"

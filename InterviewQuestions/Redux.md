@@ -403,7 +403,6 @@ const store = configureStore({ reducer: counterSlice.reducer });
 
 export default store;
 ```
-
 ---
 
 ## 20. What are slices in Redux Toolkit?
@@ -429,9 +428,7 @@ const counterSlice = createSlice({
 export const { increment, decrement } = counterSlice.actions;
 export default counterSlice.reducer;
 ```
-
 ---
-
 
 ## 21. What is the difference between Redux and Context API?
 Both **Redux** and **React Context API** are used for state management, but they have key differences:

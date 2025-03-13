@@ -3,6 +3,7 @@ Linear Search is a simple searching algorithm that checks each element in a list
 ---
 
 ### **1. Basic Linear Search**
+
 #### **Problem:** Given an array and a target value, return the index of the target if it exists; otherwise, return `-1`.
 ```python
 def linear_search(arr, target):

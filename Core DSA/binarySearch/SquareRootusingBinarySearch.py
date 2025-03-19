@@ -18,3 +18,5 @@ def sqrt_binary_search(x):
 # Example
 print(sqrt_binary_search(25))  # Output: 5
 print(sqrt_binary_search(10))  # Output: 3
+
+
